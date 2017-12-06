@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE struts PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 2.5//EN"
+        "http://struts.apache.org/dtds/struts-2.5.dtd">
+
+<struts>
+
+    <package name="demo" namespace="/test" extends="base">
+
+        <action name="login" class="UserActions" method="login">
+            <result name="login">/login.htm</result>
+            <result name="welcome">/index.jsp</result>
+
+        </action>
+
+    </package>
+    <!--应用范围全局视图 其他视图继承该视图-->
+    <package name="base" abstract="true" extends="struts-default" >
+        <global-results>
+            <result name="input">/input/error.jsp</result>
+            <result name="message">/message.jsp</result>
+        </global-results>
+    </package>
+    <!--为应用指定多个配置文件-->
+    <include file="struts-*.xml"/>
+</struts>
