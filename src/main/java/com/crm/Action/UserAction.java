@@ -15,6 +15,7 @@ public class UserAction extends ActionSupport {
         User user = new User();
         user.setUsername("z");
         user.setPassword("zzz");
+
         User Reuser = userService.login(user);
         System.out.println(Reuser);
        if(Reuser != null){
